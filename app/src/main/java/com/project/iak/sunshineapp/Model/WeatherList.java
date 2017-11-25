@@ -4,6 +4,8 @@ package com.project.iak.sunshineapp.Model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 public class WeatherList {
 
     @SerializedName("dt")
@@ -20,7 +22,7 @@ public class WeatherList {
     private Integer humidity;
     @SerializedName("weather")
     @Expose
-    private java.util.List<Weather> weather = null;
+    private List<Weather> weather = null;
     @SerializedName("speed")
     @Expose
     private Double speed;
@@ -66,7 +68,7 @@ public class WeatherList {
         this.humidity = humidity;
     }
 
-    public java.util.List<Weather> getWeather() {
+    public List<Weather> getWeather() {
         return weather;
     }
 

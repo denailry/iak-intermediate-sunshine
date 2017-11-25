@@ -1,19 +1,43 @@
 package com.project.iak.sunshineapp;
 
+import com.raizlabs.android.dbflow.annotation.Column;
+import com.raizlabs.android.dbflow.annotation.PrimaryKey;
+import com.raizlabs.android.dbflow.annotation.Table;
+import com.raizlabs.android.dbflow.structure.BaseModel;
+
 /**
  * Created by denail on 17/11/19.
  */
 
-public class WeatherModel {
+@Table(database = MyDatabase.class)
+public class WeatherModel extends BaseModel {
+    @PrimaryKey
+    @Column
+    private int id;
+    @Column
     private String day;
+    @Column
     private String weather;
+    @Column
     private int maxTemp;
+    @Column
     private int minTemp;
+    @Column
     private int humidty;
+    @Column
     private int pressure;
+    @Column
     private int wind;
 
     public WeatherModel() {}
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getDay() {
         return day;

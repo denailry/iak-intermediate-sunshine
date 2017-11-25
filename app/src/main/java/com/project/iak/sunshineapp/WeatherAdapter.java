@@ -2,6 +2,7 @@ package com.project.iak.sunshineapp;
 
 import android.media.Image;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -79,5 +80,16 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.ViewHold
     @Override
     public int getItemCount() {
         return dataList.size();
+    }
+
+    public void addData(WeatherModel data) {
+        dataList.add(data);
+        notifyDataSetChanged();
+    }
+
+    public void refreshData(List<WeatherModel> dataList) {
+        this.dataList = dataList;
+        Log.d("TEST", String.valueOf(dataList.size()));
+        notifyDataSetChanged();
     }
 }
